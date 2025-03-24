@@ -40,5 +40,5 @@ data.extend(result)
 
 with open("wireless_keyboards.json", "w") as file:
     json.dump(data, file, indent=4)
-    
+
 print(json.dumps(result, indent=4))
