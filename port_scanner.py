@@ -1,15 +1,19 @@
 import socket
 from rich import print
 
+// Port checking function
 def check_port(target, port):
     try:
+        // Mapping port to its name
         service_name = socket.getservbyport(port)
+        // Handling non existing port
     except (OSError, OverflowError):
         print(f"[bold red]Port {port} is not valid.[/]")
         return None
-    
+    // Creating a socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.settimeout(1)
+        // Connecting to the socket on a target (eg: 192.168.0.110)
         r = s.connect_ex((target, port))
 
         print()
